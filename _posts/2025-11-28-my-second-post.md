@@ -85,21 +85,21 @@ comments: true
 
 5. 真正的 Agent 研究
 
-    探索大模型的认知边界。比如规划Planning能力。模型能不能真的像人一样拆解复杂任务？现在的ReAct、Tree of Thoughts这些框架，本质上是在用工程手段弥补模型推理能力的不足。
+    探索大模型的 **认知边界** 。比如规划Planning能力。模型能不能真的像人一样拆解复杂任务？现在的ReAct、Tree of Thoughts这些框架，本质上是在用工程手段弥补模型推理能力的不足。
 
-6. 读斯坦福著名的 Generative Agents
+6. 读斯坦福著名的 **Generative Agents**
 
     它研究的不是模型本身，而是记忆Memory的架构。它设计了短期记忆、长期记忆、反思Reflection机制。作为一个学生，你完全可以复刻并改进这种架构。你可以研究 **怎么让Agent在长周期任务中保持一致性**，**怎么解决误差积累Error Propagation** 的问题。Agent一旦第一步错了，后面全错，有没有一种自我修正Self-Correction的机制？这不需要训练模型，需要的是 **设计精巧的认知架构** 。
     
-7. 可以做高效微调 PEFT
+7. 可以做 **高效微调 PEFT**
 
     LoRA和QLoRA的出现就是为了解决大家穷的问题。但是LoRA就是终点吗？显然不是。现在的LoRA通常是 **全层或者特定层微调** ，你能不能研究出一种的 **动态的LoRA** ，根据输入样本的难易程度，自适应地选择微调哪些秩 Rank？或者研究 **LoRA在多任务学习下的表现，怎么解决灾难性遗忘Catastrophic Forgetting** ？
 
-8. 可以做量化Quantization
+8. 可以做 **量化Quantization**
 
     大家都知道4-bit量化，那能不能做2-bit？甚至1.58bit？最近微软出的 **BitNet b1.58** ,把权重压到了三元值{-1,0,1}，这直接挑战了Transformer的底层计算逻辑。虽然复现BitNet可能需要算力，但你可以研究现有的模型量化后的行为变化。比如量化会不会损害模型的逻辑推理能力？会不会更容易产生幻觉？这种关于 **模型行为学** 的研究，非常有价值。
 
-9. 机械可解释性 Mechanistic Interpretability
+9. 机械可解释性 **Mechanistic Interpretability**
 
     核心目标：搞清楚黑盒子里到底发生了什么。我们知道Transformer有Attention，有MLP，但具体的每一个神经元，每一个Attention Head在干什么？
     
@@ -107,7 +107,7 @@ comments: true
 
     **Neel Nanda** 有很多关于这方面的教程和工具库，比如 **TrnasformerLens** ，着绝对是宝藏。
 
-10. 小模型的极限推理
+10. 小模型的 **极限推理**
     
     侧端模型On-device LLM才是未来的蓝海。
     
@@ -115,23 +115,23 @@ comments: true
 
     你可以研究怎么把 GPT-4 的推理过程蒸馏给一个极小的学生模型。不仅仅是蒸馏答案，而是蒸馏思维过程CoT。Google的Distilling Step-by-Step就是这方面的先驱。你可以尝试用更小的模型架构，比如SSM状态空间模型Mamba，或者RWKV，去在这个量级上挑战Transformer。这些非Transformer架构在长序列处理上有着天然的计算优势，而且训练成本相对较低，非常适合学生去探索。
 
-11. 抓住一个具体的、反直觉的现象去深挖
+11. 抓住一个 **具体的、反直觉的** 现象去深挖
 
     ex. 研究长上下文Long Context下的迷失现象。为什么把相关信息放在Prompt中间，模型就找不到了？这叫 **Lost in the Middle** 。你能不能通过改变位置编码，或者改变Attention Mask的方式来解决这个问题？又或者，你去研究 **对抗攻击Adversarial Attack** 。现在的LLM虽然经过了对齐，但依然很脆弱。你能不能找到一种通用的后缀，加在任何Prompt后面，就能让模型绕过安全检查？这叫 **Jailbreak**。这个领域的教科书：卡内基梅隆大学的 **Universal and Transferable Adversarial Attacks on Aligned Language Models** 。
 
-12. 不要忽视了传统的NLP任务与LLM的结合。
+12. 不要忽视了 **传统的NLP任务与LLM** 的结合。
 
     比如信息抽取information Extraction。你能不能研究一种 **少样本Few-shot的策略** ，让小模型在特定领域的抽取任务上达到大模型的效果？这在医疗、法律这些垂直领域非常有价值。垂直领域的微调和适配，是现在创业和落地最火的方向，作为学生，你可以找一个公开的法律文书数据集或者医疗问答数据集，去摸索一套Domain Adaptation的最佳实践。
 
-13. 研究怎么用LLM来增强视觉理解
+13. 研究怎么用LLM来 **增强视觉理解**
 
     现在的LLM可以生成代码，那能不能让它生成一段Python代码去调用OpenCV处理图片，然后再回答问题？这叫Visual Programming。这种Visual ChatGPT的思路，本质上是把视觉问题转化为了语言和逻辑问题，这恰恰避开了昂贵的视觉模型训练，而利用了LLM强大的规划能力。
 
 14. System 1和System 2的融合
 
-    System 1：直觉，是快思考，就是现在的LLM，给它一个Token，它预测下一个，这是本能。
+    System 1： **直觉** ，是快思考，就是现在的LLM，给它一个Token，它预测下一个，这是本能。
 
-    System 2：逻辑，是慢思考，是搜索，是规划。
+    System 2： **逻辑** ，是慢思考，是搜索，是规划。
 
     AlphaGo能赢是因为它有蒙特卡洛树搜索MCTS。现在的大模型缺乏这个。你能不能设计一种机制，让LLM在回答复杂问题时，不要急着输出，而是先在内部构建一颗思维树，进行搜索和剪枝，确定了路径再输出？这方面的研究，比如Tree of Thoughts，比如Reasoning via Planning，都是在尝试赋予模型System 2的能力。这不需要你重新训练模型，而是需要你在推断阶段Inference Time做文章。
 
@@ -139,7 +139,7 @@ comments: true
 
     怎么利用一点推断时的算力，通过多轮对话、自我反思、多数投票，让一个7B模型的表现提升到13B甚至70B的水平？
 
-16. Agent的社会学模拟
+16. Agent的 **社会学模拟**
 
 17. 多阅读
 
