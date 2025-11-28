@@ -5,6 +5,7 @@ categories: [个人成长, 自我介绍]
 tags: [博客开篇, 关于我]
 toc: true
 description: "简单介绍一下俺自己～欢迎来找俺玩"
+comments: true
 ---
 
 ## 👋 先打个招呼吧
