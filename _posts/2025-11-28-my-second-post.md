@@ -104,7 +104,7 @@ comments: true
     核心目标：搞清楚黑盒子里到底发生了什么。我们知道Transformer有Attention，有MLP，但具体的每一个神经元，每一个Attention Head在干什么？
     
     Anthropic：Induction Heads：专门复制上下文里的模式，是模型拥有上下文学习In-Context Learning能力的关键。*需要极其缜密的逻辑和数学直觉*
-    
+
     **Neel Nanda** 有很多关于这方面的教程和工具库，比如 **TrnasformerLens** ，着绝对是宝藏。
 
 10. 小模型的极限推理
@@ -137,7 +137,7 @@ comments: true
 
 15. Test-time Augmentation
 
-    怎么利用一点推断时的算里，通过多轮对话、自我反思、多数投票，让一个7B模型的表现提升到13B甚至70B的水平？
+    怎么利用一点推断时的算力，通过多轮对话、自我反思、多数投票，让一个7B模型的表现提升到13B甚至70B的水平？
 
 16. Agent的社会学模拟
 
